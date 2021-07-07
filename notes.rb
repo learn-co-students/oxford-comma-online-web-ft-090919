@@ -3,9 +3,8 @@ def oxford_comma(array)
     if array.size <= 2 then
       array.join(" and ")
     else array.size > 2  
-    result = array.insert(-2, "and").join(", ")
-    result.gsub!("and,", "and")
-  end
-
+    array.insert(-2, "and ")
+    result = array.join(", ")
+    result["and, "] = ["and "]
+    end 
 end
-
